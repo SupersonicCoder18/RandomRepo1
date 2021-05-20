@@ -1,0 +1,46 @@
+<html>
+<head>
+   <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
+
+   <script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDKEEwYE0xq_Pb4RXyEjxQR_XnNS04kMgY",
+    authDomain: "renamingfilesforquiz.firebaseapp.com",
+    databaseURL: "https://renamingfilesforquiz.firebaseio.com",
+    projectId: "renamingfilesforquiz",
+    storageBucket: "renamingfilesforquiz.appspot.com",
+    messagingSenderId: "770560109780",
+    appId: "1:770560109780:web:b1df2f0b63dd95f0885f41"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  var provider = new firebase.auth.GoogleAuthProvider();
+  firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    console.log(user.displayName)
+    document.getElementById("username").innerHTML=user.displayName
+  } else {
+    // No user is signed in.
+  }
+});
+</script>
+
+</head>  
+
+
+<body>
+<h1 id="">Hello</h1>&nbsp;<h1 id="username"></h1>
+ 
+</body>
+<html>
